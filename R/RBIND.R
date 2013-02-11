@@ -59,8 +59,10 @@ RBIND <- function(datalist, keep.rownames = TRUE) {
       })
       do.call("rbind", out)
     })
+  Final <- as.data.frame(almost, row.names = 1:nrow(almost))
+  Final <- data.frame(lapply(Final, function(x) type.convert(as.character(x))))
   if (isTRUE(keep.rownames)) {
-    rownames(almost) <- make.unique(unlist(lapply(datalist, row.names)))
-    as.data.frame(almost)
-  } else as.data.frame(almost, row.names = 1:nrow(almost))
+    row.names(Final) <- make.unique(unlist(lapply(datalist, row.names)))
+  } 
+  Final
 }
