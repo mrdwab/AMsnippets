@@ -1,0 +1,26 @@
+Package: AMsnippets
+Type: Package
+Title: Useful function "snippets"
+Version: 1.0
+Date: 2013-02-08
+Author: Ananda Mahto, Rolf Turner, Akhil S Bhel
+Maintainer: Ananda Mahto <mrdwab@gmail.com>
+Description: Most of these are small utility functions designed to reduce
+    thinking about solutions to repetitive tasks.
+License: GPL-2
+Collate:
+    'aggregate2.R'
+    'AMsnippets-package.R'
+    'CBIND.R'
+    'dfcols.list.R'
+    'LinearizeNestedList.R'
+    'load.scripts.and.data.R'
+    'mv.R'
+    'round2.R'
+    'SampleToSum.R'
+    'subsequence.R'
+    'makemeNA.R'
+    'AMsnippetsPrintMethods.R'
+    'FacsToChars.R'
+    'RBIND.R'
+    'unlistDF.R'
