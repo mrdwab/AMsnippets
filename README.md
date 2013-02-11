@@ -10,3 +10,5 @@ Install using:
 library(devtools)
 install_github("AMsnippets", "mrdwab")
 ```
+
+Documentation: [PDF](https://github.com/mrdwab/AMsnippets/blob/master/AMsnippets.pdf?raw=true)
