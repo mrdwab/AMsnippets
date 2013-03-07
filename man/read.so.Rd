@@ -1,51 +1,45 @@
 \name{read.so}
 \alias{read.so}
-\title{%% ~~function to do ... ~~}
+\title{Read displayed text at Stack Overflow}
 \usage{
   read.so(sep = "", header = TRUE)
 }
 \arguments{
-  \item{sep}{%% ~~Describe \code{sep} here~~}
+  \item{sep}{Most of the time, the code shared is space
+  separated (which is the default for this function). If
+  the separator is any other character, it can be specified
+  here.}
 
-  \item{header}{%% ~~Describe \code{header} here~~}
-}
-\value{
-  %% ~Describe the value returned %% If it is a LIST, use
-  %% \item{comp1 }{Description of 'comp1'} %% \item{comp2
-  }{Description of 'comp2'} %% ...
+  \item{header}{Are headers included?}
 }
 \description{
-  %% ~~ A concise (1-5 lines) description of what the
-  function does. ~~
-}
-\details{
-  %% ~~ If necessary, more details than the description
-  above ~~
-}
-\note{
-  %% ~~further notes~~
+  For many questions at Stack Overflow, the question asker
+  does not properly share their question (for example,
+  using \code{\link{dput}} or by sharing some commands to
+  make up the data). Most of the time, you can just copy
+  and paste the text into R using \code{read.table(text =
+  "clipboard", header = TRUE, stringsAsFactors = FALSE)}.
+  This function is basically a convenience function for the
+  above.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+## Copy the following text (select and ctrl-c)
 
-## The function is currently defined as
-function (sep = "", header = TRUE)
-{
-   suppressWarnings(read.table(text = gsub("^#|^##", "", readLines("clipboard")),
-       header = header, stringsAsFactors = FALSE, sep = sep))
- }
+# A B
+# 1 2
+# 3 4
+# 5 6
+
+## Now, just type:
+
+read.so()
+}
 }
 \author{
-  %% ~~who you are~~
-}
-\references{
-  %% ~put references to the literature/web site here ~
+  Ananda Mahto
 }
 \seealso{
-  %% ~~objects to See Also as \code{\link{help}}, ~~~
+  \code{\link{dput}}, \code{\link{read.table}}
 }
-\keyword{~kwd1}
-\keyword{~kwd2}
 

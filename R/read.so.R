@@ -1,31 +1,26 @@
-#'%% ~~function to do ... ~~
+#'Read displayed text at Stack Overflow
 #'
-#'%% ~~ A concise (1-5 lines) description of what the function does. ~~
+#'For many questions at Stack Overflow, the question asker does not properly share their question (for example, using \code{\link{dput}} or by sharing some commands to make up the data). Most of the time, you can just copy and paste the text into R using \code{read.table(text = "clipboard", header = TRUE, stringsAsFactors = FALSE)}. This function is basically a convenience function for the above.
 #'
-#'%% ~~ If necessary, more details than the description above ~~
+#'@param sep Most of the time, the code shared is space separated (which is the default for this function). If the separator is any other character, it can be specified here.
+#'@param header Are headers included?
 #'
-#'@param sep %% ~~Describe \code{sep} here~~
-#'@param header %% ~~Describe \code{header} here~~
-#'@return %% ~Describe the value returned %% If it is a LIST, use %%
-#'\item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#''comp2'} %% ...
-#'@note %% ~~further notes~~
-#'@author %% ~~who you are~~
-#'@seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
-#'@references %% ~put references to the literature/web site here ~
-#'@keywords ~kwd1 ~kwd2
+#'@author Ananda Mahto
+#'@seealso \code{\link{dput}}, \code{\link{read.table}}
 #'@examples
 #'
-#'##---- Should be DIRECTLY executable !! ----
-#'##-- ==>  Define data, use random,
-#'##--	or do  help(data=index)  for the standard data sets.
+#'\dontrun{
+#'## Copy the following text (select and ctrl-c)
 #'
-#'## The function is currently defined as
-#'function (sep = "", header = TRUE) 
-#'{
-#'    suppressWarnings(read.table(text = gsub("^#|^##", "", readLines("clipboard")), 
-#'        header = header, stringsAsFactors = FALSE, sep = sep))
-#'  }
+#'# A B
+#'# 1 2
+#'# 3 4
+#'# 5 6
+#'
+#'## Now, just type:
+#'
+#'read.so()
+#'}
 #'
 read.so <- function(sep = "", header = TRUE) {
   suppressWarnings(
