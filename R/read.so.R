@@ -23,7 +23,7 @@
 #'}
 #'
 read.so <- function(sep = "", header = TRUE) {
-  suppressWarnings(
+  SODF <<- suppressWarnings(
     read.table(text = gsub("^#|^##", "", readLines("clipboard")),
                header = header, stringsAsFactors = FALSE,
                sep = sep))
