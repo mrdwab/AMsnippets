@@ -10,6 +10,7 @@ export(aggregate2,
        subsequence,
        unlistDF,
        FacsToChars,
-       RBIND)
+       RBIND,
+       read.so)
 S3method(print, subSequence)
 S3method(print, sampletosum)
