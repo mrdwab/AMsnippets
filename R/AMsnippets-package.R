@@ -3,7 +3,9 @@
 #'An assortment of R snippets
 #'
 #'The \emph{AMsnippets} package is a collection of utilities that make certain
-#'repetitious or annoying tasks less repetitious or less annoying. Some of the functions were written as answers to questions at Stack Overflow; in such cases, a link to the original question has been provided.
+#'repetitious or annoying tasks less repetitious or less annoying. Some of the
+#'functions were written as answers to questions at Stack Overflow; in such
+#'cases, a link to the original question has been provided.
 #'
 #'\tabular{ll}{ Package: \tab AMsnippets\cr Type: \tab Package\cr Version: \tab
 #'1.0\cr Date: \tab 2013-02-08\cr License: \tab GPL-2\cr }
@@ -27,8 +29,8 @@
 #'
 #'## FacsToChars
 #'dat <- data.frame(title = c("title1", "title2", "title3"),
-#'                  author = c("author1", "author2", "author3"),
-#'                  customerID = c(1, 2, 1))
+#'                author = c("author1", "author2", "author3"),
+#'                customerID = c(1, 2, 1))
 #'str(dat)
 #'FacsToChars(dat, overwrite = TRUE)
 #'str(dat)
@@ -36,10 +38,10 @@
 #'## makemeNA
 #'# Some sample data
 #'temp <- data.frame(
-#' V1 = c(1:3),
-#' V2 = c(1, "*", 3),
-#' V3 = c("a", "*", "c"),
-#' V4 = c(".", "*", "3"))
+#'V1 = c(1:3),
+#'V2 = c(1, "*", 3),
+#'V3 = c("a", "*", "c"),
+#'V4 = c(".", "*", "3"))
 #'temp
 #'makemeNA(temp, c("*", "."))
 #'

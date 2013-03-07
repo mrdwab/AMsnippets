@@ -1,20 +1,30 @@
 #'Append \code{data.frame}s by row, even when columns differ
 #'
-#'The default \code{\link{rbind}} function will produce an error if you attempt to use it on \code{\link{data.frame}s} with differing numbers of columns. The \code{\link{RBIND}} function appends a list of \code{data.frame}s together by row, filling missing columns with \code{NA}.
+#'The default \code{\link{rbind}} function will produce an error if you attempt
+#'to use it on \code{\link{data.frame}s} with differing numbers of columns. The
+#'\code{\link{RBIND}} function appends a list of \code{data.frame}s together by
+#'row, filling missing columns with \code{NA}.
 #'
-#'@param datalist A \code{list} of \code{data.frame}s which need to be appended together by row.
-#'@param keep.rownames Logical. Should the original \code{\link{rownames}} be retained? Defaults to \code{TRUE}.
+#'
+#'@param datalist A \code{list} of \code{data.frame}s which need to be appended
+#'together by row.
+#'@param keep.rownames Logical. Should the original \code{\link{rownames}} be
+#'retained? Defaults to \code{TRUE}.
 #'@author Ananda Mahto
-#'@seealso \code{\link{rbind}} and \code{\link{cbind}} for other base R functions to combine \code{data.frame}s; \code{\link[plyr:rbind.fill]{rbind.fill}} for a function with almost identical functionality (does not preserve the \code{rownames}); \code{\link{CBIND}}.
+#'@seealso \code{\link{rbind}} and \code{\link{cbind}} for other base R
+#'functions to combine \code{data.frame}s;
+#'\code{\link[plyr:rbind.fill]{rbind.fill}} for a function with almost
+#'identical functionality (does not preserve the \code{rownames});
+#'\code{\link{CBIND}}.
 #'@examples
 #'
 #'## Make up some data
-#'x <- data.frame(a = 1:2, b = 2:3, c = 3:4, d = 4:5, 
-#'                 row.names = c("row_1", "another_row1"))
-#'y <- data.frame(a = c(10, 20), b = c(20, 30), c = c(30, 40), 
-#'                 row.names=c("row_2", "another_row2"))
-#'z <- data.frame(a = c(11, 21), b = c(22, 32), d = c(33, 43), 
-#'                 row.names = c("row_3", "another_row3"))
+#'x <- data.frame(a = 1:2, b = 2:3, c = 3:4, d = 4:5,
+#'               row.names = c("row_1", "another_row1"))
+#'y <- data.frame(a = c(10, 20), b = c(20, 30), c = c(30, 40),
+#'               row.names=c("row_2", "another_row2"))
+#'z <- data.frame(a = c(11, 21), b = c(22, 32), d = c(33, 43),
+#'               row.names = c("row_3", "another_row3"))
 #'xx <- data.frame(a = 1:2, b = 3:4)
 #'yy <- data.frame(a = 5:6, b = 7:8)
 #'zz <- data.frame(a = 9:10, b = 11:12)

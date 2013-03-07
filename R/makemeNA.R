@@ -10,17 +10,21 @@
 #'
 #'@param mydf A \code{data.frame} in which some values need to be converted to
 #'\code{NA}
-#'@param NAStrings The values which have been used to represent NA
+#'@param NAStrings The values which have been used to represent \code{NA}
+#'@param fixed Logical. Is the \code{NAStrings} argument a fixed character (or
+#'vector of characters) or a regular expression? Defaults to \code{TRUE}.
+#'@param overwrite Logical. Should the current object be overwritten? Defaults
+#'to \code{FALSE}
 #'@author Ananda Mahto
 #'@seealso \code{\link{type.convert}}
 #'@examples
 #'
 #'# Some sample data
 #'temp <- data.frame(
-#' V1 = c(1:3),
-#' V2 = c(1, "*", 3),
-#' V3 = c("a", "*", "c"),
-#' V4 = c(".", "*", "3"))
+#'V1 = c(1:3),
+#'V2 = c(1, "*", 3),
+#'V3 = c("a", "*", "c"),
+#'V4 = c(".", "*", "3"))
 #'temp
 #'str(temp)
 #'
@@ -32,7 +36,16 @@
 #'makemeNA(temp, "1")
 #'\dontshow{rm(temp, temp1)}
 #'
-makemeNA <- function(mydf, NAStrings) {
-  data.frame(lapply(mydf, function(x) type.convert(
+makemeNA <- function(mydf, NAStrings, fixed = TRUE, overwrite = FALSE) {
+  dfname <- deparse(substitute(mydf))
+  if (!isTRUE(fixed)) {
+    mydf <- data.frame(lapply(mydf, function(x) gsub(NAStrings, "", x)))
+    NAStrings <- ""
+  }
+  mydf <- data.frame(lapply(mydf, function(x) type.convert(
     as.character(x), na.strings = NAStrings)))
+  if (isTRUE(overwrite)) {
+    assign(dfname, mydf, envir = .GlobalEnv)
+  } 
+  mydf
 }

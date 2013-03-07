@@ -2,14 +2,22 @@
 \alias{makemeNA}
 \title{Make certain values in a \code{data.frame} \code{NA}}
 \usage{
-  makemeNA(mydf, NAStrings)
+  makemeNA(mydf, NAStrings, fixed = TRUE,
+    overwrite = FALSE)
 }
 \arguments{
   \item{mydf}{A \code{data.frame} in which some values need
   to be converted to \code{NA}}
 
   \item{NAStrings}{The values which have been used to
-  represent NA}
+  represent \code{NA}}
+
+  \item{fixed}{Logical. Is the \code{NAStrings} argument a
+  fixed character (or vector of characters) or a regular
+  expression? Defaults to \code{TRUE}.}
+
+  \item{overwrite}{Logical. Should the current object be
+  overwritten? Defaults to \code{FALSE}}
 }
 \description{
   Sometimes, after having read in data, one needs to
