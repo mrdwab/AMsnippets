@@ -11,6 +11,7 @@ export(aggregate2,
        unlistDF,
        FacsToChars,
        RBIND,
-       read.so)
+       read.so,
+       getSize)
 S3method(print, subSequence)
 S3method(print, sampletosum)

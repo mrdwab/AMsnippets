@@ -25,3 +25,4 @@ Collate:
     'RBIND.R'
     'unlistDF.R'
     'read.so.R'
+    'getSize.R'

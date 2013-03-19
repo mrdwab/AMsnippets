@@ -2,6 +2,8 @@
 #'
 #'For many questions at Stack Overflow, the question asker does not properly share their question (for example, using \code{\link{dput}} or by sharing some commands to make up the data). Most of the time, you can just copy and paste the text into R using \code{read.table(text = "clipboard", header = TRUE, stringsAsFactors = FALSE)}. This function is basically a convenience function for the above.
 #'
+#'The output of \code{\link{read.so}} is automatically assigned to an object in your workspace called "\code{SODF}".
+#'
 #'@param sep Most of the time, the code shared is space separated (which is the default for this function). If the separator is any other character, it can be specified here.
 #'@param header Are headers included?
 #'
