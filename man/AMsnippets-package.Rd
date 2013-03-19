@@ -28,8 +28,8 @@ df3 <- data.frame(E = 1:8, F = letters[1:8], G = LETTERS[1:8])
 
 ## FacsToChars
 dat <- data.frame(title = c("title1", "title2", "title3"),
-               author = c("author1", "author2", "author3"),
-               customerID = c(1, 2, 1))
+              author = c("author1", "author2", "author3"),
+              customerID = c(1, 2, 1))
 str(dat)
 FacsToChars(dat, overwrite = TRUE)
 str(dat)
