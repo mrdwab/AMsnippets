@@ -2,7 +2,7 @@
 \alias{read.so}
 \title{Read displayed text at Stack Overflow}
 \usage{
-  read.so(sep = "", header = TRUE)
+  read.so(sep = "", header = TRUE, out = "mydf")
 }
 \arguments{
   \item{sep}{Most of the time, the code shared is space
@@ -11,6 +11,9 @@
   here.}
 
   \item{header}{Are headers included?}
+
+  \item{out}{Desired output object name. Defaults to
+  \code{mydf}.}
 }
 \description{
   For many questions at Stack Overflow, the question asker
@@ -21,6 +24,12 @@
   "clipboard", header = TRUE, stringsAsFactors = FALSE)}.
   This function is basically a convenience function for the
   above.
+}
+\details{
+  The output of \code{\link{read.so}} is automatically
+  assigned to an object in your workspace called
+  "\code{mydf}" unless specified using the \code{out}
+  argument.
 }
 \examples{
 \dontrun{
